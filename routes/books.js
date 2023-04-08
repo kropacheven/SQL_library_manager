@@ -19,7 +19,7 @@ function asyncHandler(cb){
 /* GET books listing. */
 router.get('/', asyncHandler(async (req, res) => {
   //res.render("articles/index", { articles: {}, title: "Sequelize-It!" });
-  res.send('Hello from Books!!!')
+  res.render('index')
 }));
 
 // Module exports:
