@@ -21,8 +21,13 @@ function asyncHandler(cb){
 router.get('/', asyncHandler(async (req, res) => {
     const books = await Book.findAll();
     res.render("index", { books: books });
-    //res.render('index')
   }));
+
+  /* Create a new book form. */
+router.get('/new', (req, res) => {
+    //res.send('new');
+    res.render("newbook", { title: "New Book" });
+  });
   
   
   module.exports = router;
