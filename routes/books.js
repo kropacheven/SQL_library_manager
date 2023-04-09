@@ -30,10 +30,10 @@ router.get('/new', (req, res) => {
   });
   
 
-// /* POST create article. */
-// router.post('/', asyncHandler(async (req, res) => {
-//     await Book.create(req.body);
-//     // console.log(req.body)
+/* POST create new book */
+// router.post('/new', asyncHandler(async (req, res) => {
+//     //await Book.create(req.body);
+//     console.log(req.body)
 //     // res.redirect("/articles/" + book.id);
 //   }));
   
