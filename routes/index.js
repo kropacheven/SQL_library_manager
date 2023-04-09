@@ -18,8 +18,9 @@ function asyncHandler(cb){
 
 /* GET books listing. */
 router.get('/', asyncHandler(async (req, res) => {
-  //res.render("articles/index", { articles: {}, title: "Sequelize-It!" });
-  res.render('index')
+  const books = await Book.findAll();
+  res.render("index", { books: books });
+  //res.render('index')
 }));
 
 
