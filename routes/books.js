@@ -38,10 +38,17 @@ router.post('/', asyncHandler(async (req, res) => {
   }));
   
 
-/* GET individual article. */
+/* GET individual book. */
 router.get("/:id", asyncHandler(async (req, res) => {
   const books = await Book.findByPk(req.params.id);
   res.render("book", { books: books, title: "Update book" }); 
+}));
+
+/* POST Update individual book. */
+router.post('/:id', asyncHandler(async (req, res) => {
+  const books = await Book.findByPk(req.params.id);
+  await books.update(req.body);
+  res.redirect("/books/" + books.id);
 }));
 
 
