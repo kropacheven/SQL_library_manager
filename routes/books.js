@@ -41,7 +41,7 @@ router.post('/', asyncHandler(async (req, res) => {
 /* GET individual article. */
 router.get("/:id", asyncHandler(async (req, res) => {
   const books = await Book.findByPk(req.params.id);
-  res.render("book", { books: books }); 
+  res.render("book", { books: books, title: "Update book" }); 
 }));
 
 

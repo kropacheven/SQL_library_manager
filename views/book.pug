@@ -1,12 +1,23 @@
 extends layout.pug 
 
 block content
-    h1 Book id##{books.id}
-    h2 Title: #{books.title}
-    p Author:#{books.author}
-    p Genre: #{books.genre}
-    p Year: #{books.year}
-    p Added to database: #{books.createdAt}
-    p Last time updated: #{books.updatedAt}
-
-    a.button(href='/') Back 
+  h1 #{title}
+  form(action="/books", method="post")
+    p
+      label(for='title') Book
+      input#title(name='title' type='text' value= books.title)
+    p
+      label(for='author') Author
+      input#author(name='author' type='text' value= books.author)
+    p
+      label(for='genre') Genre
+      input#genre(name='genre' type='text' value= books.genre)
+    p
+      label(for='year') Year
+      input#year(name='year' type='text' value= books.year)
+    p
+      input(type='submit' value='Update Book')
+    p
+      a.button(href='/') Cancel
+    p
+      a.button(href='all_books.html') Delete
