@@ -31,12 +31,11 @@ router.get('/new', (req, res) => {
   
 
 /* POST create new book */
-// router.post('/new', asyncHandler(async (req, res) => {
-//     //await Book.create(req.body);
-//     console.log(req.body)
-//     // res.redirect("/articles/" + book.id);
-//   }));
+router.post('/', asyncHandler(async (req, res) => {
+    const book = await Book.create(req.body);
+    //console.log(req.body)
+    res.redirect("/");
+  }));
   
-
 
   module.exports = router;
