@@ -32,10 +32,18 @@ router.get('/new', (req, res) => {
 
 /* POST create new book */
 router.post('/', asyncHandler(async (req, res) => {
-    const book = await Book.create(req.body);
+    const books= await Book.create(req.body);
     //console.log(req.body)
-    res.redirect("/");
+    res.redirect("/books/" + books.id);
   }));
   
 
-  module.exports = router;
+/* GET individual article. */
+router.get("/:id", asyncHandler(async (req, res) => {
+  const books = await Book.findByPk(req.params.id);
+  res.render("book", { books: books }); 
+}));
+
+
+
+module.exports = router;

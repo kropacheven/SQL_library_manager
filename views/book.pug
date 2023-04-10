@@ -1,0 +1,12 @@
+extends layout.pug 
+
+block content
+    h1 Book id##{books.id}
+    h2 Title: #{books.title}
+    p Author:#{books.author}
+    p Genre: #{books.genre}
+    p Year: #{books.year}
+    p Added to database: #{books.createdAt}
+    p Last time updated: #{books.updatedAt}
+
+    a.button(href='/') Back 
