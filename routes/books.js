@@ -54,7 +54,8 @@ router.get("/:id", asyncHandler(async (req, res) => {
   if (books) {
     res.render("book", { books: books, title: "Update book" }); 
   } else {
-    res.sendStatus(404);
+    //res.sendStatus(404);
+    res.render('error');
   }
 }));
 
